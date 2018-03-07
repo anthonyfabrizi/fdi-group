@@ -1,8 +1,13 @@
-# GraphCMS Examples [![Slack Status](https://slack.graphcms.com/badge.svg)](https://slack.graphcms.com)
-Example projects to help you get started with GraphCMS.
+# GraphCMS starter blog with Gatsby & gatsby-source-graphcms [![Slack Status](https://slack.graphcms.com/badge.svg)](https://slack.graphcms.com)
+The default Gatsby starter
 
-# Guides
-- ### [How to set up a project](https://graphcms.com/docs/getting-started/setting_up_the_project/)
-- ### [Getting started with GraphCMS & React](https://graphcms.com/docs/getting-started/beginners_guide_with_react/)
-- ### [Getting started with GraphCMS & Vue](https://graphcms.com/docs/getting-started/beginners_guide_with_vue/)
+For an overview of how things work in `Gatsby` please refer to the [Gatsby docs](https://www.gatsbyjs.org/docs/)
 
+## How to start
+```
+git clone https://github.com/GraphCMS/graphcms-examples.git && cd graphcms-examples/gatsby-source-plugin-blog && yarn && yarn develop
+```
+
+## Deploy
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/GraphCMS/graphcms-examples/tree/master/gatsby-source-plugin-blog)
