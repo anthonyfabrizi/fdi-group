@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `GraphCMS Starter blog`
+    title: `Farmington Displays Inc - Trade Show Displays, Exhibits, Retail`
   },
   plugins: [
     {
       resolve: `gatsby-source-graphcms`,
       options: {
-        endpoint: `https://api.graphcms.com/simple/v1/starterBlog`,
+        endpoint: `https://api.graphcms.com/simple/v1/cje988dkv0hig0121i4w2db6z`,
         query: `{
           allPosts {
             id
@@ -25,6 +25,35 @@ module.exports = {
             avatar {
               handle
             }
+          },
+          allGalleries {
+            id
+            title
+            caption
+            slug
+            images {
+              handle
+              height
+              url
+              width
+            }
+          },
+          allCapabilities {
+            id
+            title
+            description
+            image {
+              url
+            }
+            imageAlignment
+          },
+          allAbouts {
+            id
+            slug
+            headerImage {
+              url
+            }
+            content
           }
         }`
       }
@@ -52,6 +81,7 @@ module.exports = {
         ]
       }
     },
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sass`
   ]
 }

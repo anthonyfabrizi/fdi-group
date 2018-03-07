@@ -5,6 +5,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
   return new Promise((resolve, reject) => {
     const postTemplate = path.resolve(`src/templates/post.js`)
+    const galleryTemplate = path.resolve(`./src/templates/lightbox.js`);
 
     graphql(`
       {
@@ -20,6 +21,21 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               content
             }
           }
+        },
+        allGalleries {
+          edges {
+            node {
+              id
+              title
+              slug
+              images {
+                handle
+                height
+                url
+                width
+              }
+            }
+          }
         }
       }
     `
@@ -31,6 +47,16 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         createPage({
           path: `/post/${node.slug}`,
           component: slash(postTemplate),
+          context: {
+            slug: node.slug
+          }
+        })
+      })
+
+      result.data.allGalleries.edges.map(({ node }) => {
+        createPage({
+          path: `/work/${node.slug}`,
+          component: slash(galleryTemplate),
           context: {
             slug: node.slug
           }
