@@ -8,6 +8,14 @@ module.exports = {
       options: {
         endpoint: `https://api.graphcms.com/simple/v1/cje988dkv0hig0121i4w2db6z`,
         query: `{
+          allHomes {
+            id
+            title
+            images {
+              handle
+              url
+            }
+          },
           allPosts {
             id
             slug
@@ -15,14 +23,6 @@ module.exports = {
             content
             dateAndTime
             coverImage {
-              handle
-            }
-          },
-          allAuthors {
-            id
-            name
-            bibliography
-            avatar {
               handle
             }
           },

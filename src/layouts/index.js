@@ -9,10 +9,10 @@ import faUpload from '@fortawesome/fontawesome-free-solid/faUpload'
 import faFacebookF from '@fortawesome/fontawesome-free-brands/faFacebookF'
 import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter'
 import faLinkedinIn from '@fortawesome/fontawesome-free-brands/faLinkedinIn'
-import faYouTube from '@fortawesome/fontawesome-free-brands/faYouTube'
+import faYoutube from '@fortawesome/fontawesome-free-brands/faYoutube'
 import faInstagram from '@fortawesome/fontawesome-free-brands/faInstagram'
 
-fontawesome.library.add(faUpload, faFacebookF, faTwitter, faLinkedinIn, faYouTube, faInstagram)
+fontawesome.library.add(faUpload, faFacebookF, faTwitter, faLinkedinIn, faYoutube, faInstagram)
 
 import './index.scss'
 

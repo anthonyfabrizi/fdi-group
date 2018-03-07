@@ -26,10 +26,10 @@ class IndexPage extends React.Component {
     super(props);
   }
 
-  render() {console.log(this.props.data);
-    const gallery = this.props.data.galleries;
+  render() {
+    const home = this.props.data.homes;
 
-    const slides = gallery.images.map((item, index) => {
+    const slides = home.images.map((item, index) => {
       return (
         (index === 0) ? (
           <div key={item.url} className="carousel-item active" style={{ backgroundImage: 'url(' + item.url + ')' }}>
@@ -54,7 +54,7 @@ class IndexPage extends React.Component {
         <header>
           <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">
-              {gallery.images.map((item, index) => (
+              {home.images.map((item, index) => (
                 (index === 0) ? (
                   <li key={item.url} data-target="#carouselExampleIndicators" data-slide-to={index} className="active"></li>
                 ) : (
@@ -90,14 +90,12 @@ class IndexPage extends React.Component {
 
 export default IndexPage
 
-export const allPostsQuery = graphql`
+export const homeQuery = graphql`
   query IndexQuery {
-    galleries {
-      id
+    homes {
       title
-      caption
-      slug
       images {
+        handle
         url
       }
     }
