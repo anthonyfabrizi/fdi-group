@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import { Container, Nav, NavbarBrand } from 'reactstrap'
+import { NavLink } from 'react-router-dom'
 
 import styles from '../styles/header.module.css'
 
@@ -17,29 +18,19 @@ const Header = () => (
       <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav ml-auto">
           <li className='nav-item'>
-            <Link to='/about' className='nav-link'>
-              Who We Are
-              </Link>
+          <NavLink to="/about" activeClassName="active" className='nav-link'>Who We Are</NavLink>
           </li>
           <li className='nav-item'>
-            <Link to='/capabilities' className='nav-link'>
-              Capabilities
-              </Link>
+            <NavLink to="/capabilities" activeClassName="active" className='nav-link'>Capabilities</NavLink>
           </li>
           <li className={"nav-item"}>
-            <Link to='/work' className='nav-link'>
-              Our Work
-              </Link>
+            <NavLink to="/work" activeClassName="active" className='nav-link'>Our Work</NavLink>
           </li>
           <li className='nav-item'>
-            <Link to='/blog' className='nav-link'>
-              Blog
-              </Link>
+            <NavLink to="/blog" activeClassName="active" className='nav-link'>Blog</NavLink>
           </li>
           <li className='nav-item'>
-            <Link to='/#' className='nav-link'>
-              Contact Us
-              </Link>
+            <NavLink to="/contact" activeClassName="active" className='nav-link'>Contact Us</NavLink>
           </li>
         </ul>
       </div>

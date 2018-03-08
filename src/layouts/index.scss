@@ -41,7 +41,7 @@
 // @import "node_modules/bootstrap/scss/dropdown";
 // @import "node_modules/bootstrap/scss/button-group";
 // @import "node_modules/bootstrap/scss/input-group";
-// @import "node_modules/bootstrap/scss/custom-forms";
+@import "node_modules/bootstrap/scss/custom-forms";
 @import "node_modules/bootstrap/scss/nav";
 @import "node_modules/bootstrap/scss/navbar";
 @import "node_modules/bootstrap/scss/card";
@@ -49,12 +49,12 @@
 // @import "node_modules/bootstrap/scss/pagination";
 @import "node_modules/bootstrap/scss/badge";
 // @import "node_modules/bootstrap/scss/jumbotron";
-// @import "node_modules/bootstrap/scss/alert";
+@import "node_modules/bootstrap/scss/alert";
 // @import "node_modules/bootstrap/scss/progress";
 // @import "node_modules/bootstrap/scss/media";
 // @import "node_modules/bootstrap/scss/list-group";
-// @import "node_modules/bootstrap/scss/close";
-// @import "node_modules/bootstrap/scss/modal";
+@import "node_modules/bootstrap/scss/close";
+@import "node_modules/bootstrap/scss/modal";
 // @import "node_modules/bootstrap/scss/tooltip";
 // @import "node_modules/bootstrap/scss/popover";
 @import "node_modules/bootstrap/scss/carousel";
@@ -96,6 +96,9 @@ body {
 article {
   margin: 0 auto;
   max-width: 650px;
+}
+.navbar-nav .nav-link.active {
+  border-bottom: solid 5px $black;
 }
 .pageContent {
   padding-top: 125px;

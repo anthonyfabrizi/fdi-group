@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import Link from 'gatsby-link'
 
 const Footer = () => (
     <footer className="py-3">
@@ -41,7 +42,7 @@ const Footer = () => (
                     <address>
                         <abbr title="Phone">Phone:</abbr> (860) 677-2497<br />
                         <abbr title="Fax">Fax:</abbr> (860) 677-1418<br /><br />
-                        info@fdi-group.com
+                        <Link to="/contact" className="text-dark">info@fdi-group.com</Link>
                         </address>
                 </Col>
                 <Col className="text-center mb-5" xs="12" md="4">
@@ -57,7 +58,7 @@ const Footer = () => (
                                 21 Hyde Rd<br />
                                 Farmington,<br />
                                 CT 06032
-                                    </address>
+                            </address>
                         </li>
                     </ul>
                 </Col>
@@ -71,7 +72,7 @@ const Footer = () => (
                     </p>
                 </Col>
                 <Col className="text-center text-md-right pt-2" xs="12" md="6">
-                    <p className="mb-0">&copy; 2018 Farmington Displays Inc. All rights reserved.</p>
+                    <p className="mb-0">&copy;Copyrigh 2018 Farmington Displays Inc</p>
                 </Col>
             </Row>
         </Container>

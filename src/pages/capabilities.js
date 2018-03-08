@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import Helmet from 'react-helmet'
 
-export default function Capabilities({ data }) {console.log(data);
+export default function Capabilities({ data }) {
     return (
         <div className="pageContent">
             <Container>
