@@ -45,7 +45,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       }
       result.data.allPosts.edges.map(({ node }) => {
         createPage({
-          path: `/blog/${node.title.toLowerCase().replace(" ", "-")}`,
+          path: `/blog/${node.slug}`,
           component: slash(postTemplate),
           context: {
             slug: node.slug

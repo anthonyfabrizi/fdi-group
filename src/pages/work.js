@@ -12,7 +12,7 @@ export default function Work({ data }) {
         <Row>
           {data.allGalleries.edges.map(work => (
             <Col sm="4" className="text-center" key={work.node.id}>
-            <a href={"work/" + work.node.title.toLowerCase().replace(" ", "-")}>
+            <a href={"work/" + work.node.slug}>
               <div className="mmask">
                 <img src={"https://media.graphcms.com/resize=w:400,h:300,fit:crop/" + work.node.images[0].handle} className="img-fluid" alt={work.node.title} />
               </div>

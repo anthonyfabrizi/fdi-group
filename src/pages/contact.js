@@ -65,13 +65,16 @@ class ContactForm extends React.Component {
             <div>
                 <Container className="pageContent">
                     <Row className="pt-5">
+                        <Col sm="12" md={{ size: 6, offset: 2 }}>
+                            <h2>How can we help?</h2>
+                        </Col>
                         <Col sm="12" md={{ size: 6, offset: 3 }}>
                             <AvForm onValidSubmit={this.handleValidSubmit} onInvalidSubmit={this.handleInvalidSubmit}>
                                 <AvGroup>
-                                        <AvField name="name" label="Your Name" value={name} type="text" required />
+                                    <AvField name="name" label="Your Name" value={name} type="text" required />
                                 </AvGroup>
                                 <AvGroup>
-                                        <AvField name="email" label="Your Email" value={email} type="email" required />
+                                    <AvField name="email" label="Your Email" value={email} type="email" required />
                                 </AvGroup>
                                 <AvGroup>
                                     <AvField name="message" label="Message" value={message} type="textarea" rows="6" required />

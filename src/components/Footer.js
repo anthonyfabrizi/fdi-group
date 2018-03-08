@@ -72,7 +72,7 @@ const Footer = () => (
                     </p>
                 </Col>
                 <Col className="text-center text-md-right pt-2" xs="12" md="6">
-                    <p className="mb-0">&copy;Copyrigh 2018 Farmington Displays Inc</p>
+                    <p className="mb-0">&copy;Copyright 2018 Farmington Displays Inc</p>
                 </Col>
             </Row>
         </Container>
