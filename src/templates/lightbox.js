@@ -63,9 +63,10 @@ export default class WorkGallery extends React.Component {
     const photos = [];
     const lightBoxPhotos = [];
     this.props.data.galleries.images.map(image => {console.log(image.height);
-      let obj = (image.height > image.width) ? { src: "https://media.graphcms.com/resize=h:400/" + image.handle, width: 3, height: 4 } : { src: "https://media.graphcms.com/resize=w:400,h:300,fit:crop/" + image.handle, width: 4, height: 3 }
+      let obj = (image.height > image.width) ? { src: "https://media.graphcms.com/resize=h:400/" + image.handle, width: 3, height: 4 } : { src: "https://media.graphcms.com/resize=w:400/" + image.handle, width: 4, height: 3 }
+      let img = (image.height > image.width) ? "https://media.graphcms.com/resize=h:1500/" + image.handle : "https://media.graphcms.com/resize=w:1500/" + image.handle
       photos.push(obj)
-      lightBoxPhotos.push(image.url)
+      lightBoxPhotos.push(img)
     })
     const {
       currentImage,

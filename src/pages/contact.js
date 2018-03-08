@@ -65,8 +65,9 @@ class ContactForm extends React.Component {
             <div>
                 <Container className="pageContent">
                     <Row className="pt-5">
-                        <Col sm="12" md={{ size: 6, offset: 2 }}>
+                        <Col sm="12" md={{ size: 8, offset: 2 }}>
                             <h2>How can we help?</h2>
+                            <p>We'd love to hear from you. You can either reach out to us as a whole and one of our team members will get back to you, or if you have a specific question reach out to one of our staff.</p>
                         </Col>
                         <Col sm="12" md={{ size: 6, offset: 3 }}>
                             <AvForm onValidSubmit={this.handleValidSubmit} onInvalidSubmit={this.handleInvalidSubmit}>
