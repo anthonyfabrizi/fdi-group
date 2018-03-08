@@ -4,8 +4,6 @@ import Helmet from 'react-helmet'
 import { Container, Nav, NavbarBrand } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 
-import styles from '../styles/header.module.css'
-
 const Header = () => (
   <Nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <Container>
