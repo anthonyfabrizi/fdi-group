@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => (
           <h3><strong>{post.node.title}</strong></h3>
           <h5>{post.node.dateAndTime}</h5>
           <Markdown source={post.node.content} escapeHtml={false} />
-          <Link to={`/blog/${post.node.title.toLowerCase().replace(" ", "-")}`}>Read more</Link>
+          <Link to={`/blog/${post.node.slug}`}>Read more</Link>
         </Col>
       </Row>
     ))}
