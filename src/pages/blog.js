@@ -1,4 +1,3 @@
-/* global graphql */
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import Markdown from 'react-markdown'
@@ -13,9 +12,8 @@ const IndexPage = ({ data }) => (
         <Col sm="12" md={{ size: 8, offset: 2 }}>
           <h3><strong>{post.node.title}</strong></h3>
           <h5>{post.node.dateAndTime}</h5>
-          {/*<div dangerouslySetInnerHTML={{ __html: post.node.content }}></div>*/}
           <Markdown source={post.node.content} escapeHtml={false} />
-          <Link to={`/blog/${post.node.slug}`}>Read more</Link>
+          <Link to={`/blog/${post.node.title.toLowerCase().replace(" ", "-")}`}>Read more</Link>
         </Col>
       </Row>
     ))}

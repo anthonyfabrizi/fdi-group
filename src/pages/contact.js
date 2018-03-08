@@ -1,10 +1,7 @@
-/* global graphql */
 import React from 'react'
 import { AvForm, AvField, AvGroup, AvInput, AvFeedback } from 'availity-reactstrap-validation'
 import { Container, Row, Col, Button, Label, FormGroup, Alert } from 'reactstrap'
 import axios from 'axios'
-
-const defaultState = {};
 
 class ContactForm extends React.Component {
     constructor(props) {
