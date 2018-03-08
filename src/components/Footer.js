@@ -16,22 +16,12 @@ const Footer = () => (
                             </a>
                         </li>
                         <li className="list-inline-item mr-3">
-                            <a href="#" className="text-muted" target="_blank">
-                                <FontAwesomeIcon icon={["fab", "twitter"]} size="2x" />
-                            </a>
-                        </li>
-                        <li className="list-inline-item mr-3">
                             <a href="http://www.linkedin.com/company/farmington-displays-inc" className="text-muted" target="_blank">
                                 <FontAwesomeIcon icon={["fab", "linkedin-in"]} size="2x" />
                             </a>
                         </li>
-                        <li className="list-inline-item mr-3">
-                            <a href="#" className="text-muted" target="_blank">
-                                <FontAwesomeIcon icon={["fab", "youtube"]} size="2x" />
-                            </a>
-                        </li>
                         <li className="list-inline-item">
-                            <a href="#" className="text-muted" target="_blank">
+                            <a href="https://www.instagram.com/farmingtondisplays" className="text-muted" target="_blank">
                                 <FontAwesomeIcon icon={["fab", "instagram"]} size="2x" />
                             </a>
                         </li>
@@ -65,6 +55,9 @@ const Footer = () => (
             </Row>
             <Row>
                 <Col className="text-center text-md-left" xs="12" md="6">
+                    <p>
+                    Client Portal <a href="http://exhibitforce.com/CLIENTS/default.asp" className="text-muted" target="_blank">Login</a>
+                    </p>
                     <p className="mb-0">
                         <a href="https://dropbox.hightail.com/Jeff-Scalia-FARMINGTON-DISPLAYS" className="text-muted" target="_blank">
                             <span className="mr-2">Need to share files with us?</span> <FontAwesomeIcon icon="upload" size="2x" />

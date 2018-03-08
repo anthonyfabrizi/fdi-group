@@ -15,6 +15,9 @@ module.exports = {
               handle
               url
             }
+            logoImage {
+              url
+            }
           },
           allPosts {
             id

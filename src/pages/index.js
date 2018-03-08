@@ -33,17 +33,21 @@ class IndexPage extends React.Component {
       return (
         (index === 0) ? (
           <div key={item.url} className="carousel-item active" style={{ backgroundImage: 'url(' + item.url + ')' }}>
+          {/*
             <div className="carousel-caption d-none d-md-block">
               <h3>{item.caption}</h3>
               <p>This is a description for the slide {index + 1}.</p>
             </div>
+          */}
           </div>
         ) : (
             <div key={item.url} className="carousel-item" style={{ backgroundImage: 'url(' + item.url + ')' }}>
+            {/*
               <div className="carousel-caption d-none d-md-block">
                 <h3>{item.caption}</h3>
                 <p>This is a description for the slide {index + 1}.</p>
               </div>
+            */}              
             </div>
           )
       );

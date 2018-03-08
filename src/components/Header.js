@@ -4,11 +4,11 @@ import Helmet from 'react-helmet'
 import { Container, Nav, NavbarBrand } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 
-const Header = () => (
+const Header = (data) => (
   <Nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <Container>
       <NavbarBrand href='/'>
-        <img src="https://media.graphcms.com/AgHDbDT5SBSPheHZKTwc" className="img-fluid" alt="Farmington Displays logo" />
+        <img src={"https://media.graphcms.com/AgHDbDT5SBSPheHZKTwc"} className="img-fluid" alt="Farmington Displays logo" />
       </NavbarBrand>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -37,3 +37,13 @@ const Header = () => (
 )
 
 export default Header
+
+export const homeQuery = graphql`
+  query HeaderQuery {
+    homes {
+      logoImage {
+        url
+      }
+    }
+  }
+`
