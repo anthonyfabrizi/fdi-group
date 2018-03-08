@@ -29,7 +29,6 @@ module.exports = {
           allGalleries {
             id
             title
-            caption
             slug
             images {
               handle
