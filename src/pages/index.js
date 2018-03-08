@@ -94,8 +94,8 @@ class IndexPage extends React.Component {
 
 export default IndexPage
 
-export const homeQuery = graphql`
-  query IndexQuery {
+export const HomeQuery = graphql`
+  query HomeQuery {
     homes {
       title
       images {

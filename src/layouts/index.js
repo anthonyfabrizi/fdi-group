@@ -16,9 +16,9 @@ fontawesome.library.add(faUpload, faFacebookF, faTwitter, faLinkedinIn, faYoutub
 
 import './index.scss'
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ data, children }) => (
   <div>
-    <Header />
+    <Header logo={data.homes.logoImage.url} />
     <main>
       {children()}
     </main>
@@ -31,3 +31,13 @@ TemplateWrapper.propTypes = {
 }
 
 export default TemplateWrapper
+
+export const IndexQuery = graphql`
+  query IndexQuery {
+    homes {
+      logoImage {
+        url
+      }
+    }
+  }
+`
