@@ -6,11 +6,10 @@ import Markdown from 'react-markdown'
 export default function About({ data }) {
   const about = data.abouts;
   return (
-    <div>
-
-      <Container className="pageContent">
+    <div className="pageContent">
+      <img src={about.headerImage.url} className="img-fluid" />
+      <Container>
         <div className="mb-4">
-          <img src={about.headerImage.url} className="img-fluid" />
         </div>
         <Row>
           <Col sm="12" md={{ size: 8, offset: 2 }}>

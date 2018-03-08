@@ -3,26 +3,6 @@ import React from 'react'
 import Gallery from 'react-photo-gallery'
 import Lightbox from 'react-image-lightbox'
 
-/*
-const photos = [
-  { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3 },
-  { src: 'https://source.unsplash.com/Dm-qxdynoEc/800x799', width: 1, height: 1 },
-  { src: 'https://source.unsplash.com/qDkso9nvCg0/600x799', width: 3, height: 4 },
-  { src: 'https://source.unsplash.com/iecJiKe_RNg/600x799', width: 3, height: 4 },
-  { src: 'https://source.unsplash.com/epcsn8Ed8kY/600x799', width: 3, height: 4 },
-  { src: 'https://source.unsplash.com/NQSWvyVRIJk/800x599', width: 4, height: 3 },
-  { src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4 },
-  { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3 },
-  { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', width: 4, height: 3 }
-];
-*/
-
-const images = [
-  '//placekitten.com/1500/500',
-  '//placekitten.com/4000/3000',
-  '//placekitten.com/800/1200',
-  '//placekitten.com/1500/1500'
-];
 
 export default class WorkGallery extends React.Component {
   constructor(props) {
@@ -62,9 +42,9 @@ export default class WorkGallery extends React.Component {
   render() {
     const photos = [];
     const lightBoxPhotos = [];
-    this.props.data.galleries.images.map(image => {console.log(image.height);
-      let obj = (image.height > image.width) ? { src: "https://media.graphcms.com/resize=h:400/" + image.handle, width: 3, height: 4 } : { src: "https://media.graphcms.com/resize=w:400/" + image.handle, width: 4, height: 3 }
-      let img = (image.height > image.width) ? "https://media.graphcms.com/resize=h:1500/" + image.handle : "https://media.graphcms.com/resize=w:1500/" + image.handle
+    this.props.data.galleries.images.map(image => {
+      let obj = (parseInt(image.height) > parseInt(image.width)) ? { src: "https://media.graphcms.com/resize=h:400/" + image.handle, width: 3, height: 4 } : { src: "https://media.graphcms.com/resize=w:400/" + image.handle, width: 4, height: 3 }
+      let img = (parseInt(image.height) > parseInt(image.width)) ? "https://media.graphcms.com/resize=h:1500/" + image.handle : "https://media.graphcms.com/resize=w:1500/" + image.handle
       photos.push(obj)
       lightBoxPhotos.push(img)
     })
