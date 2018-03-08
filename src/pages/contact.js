@@ -14,12 +14,13 @@ class ContactForm extends React.Component {
     }
 
     handleValidSubmit(event, values) {
-        this.setState({ values });
+        this.setState(values);
+        this.setState({ isSent: true });
         // event.preventDefault();
         event.persist();
         // get our form data out of state
         const { name, email, message } = this.state;
-
+        
         axios.post('https://mandrillapp.com/api/1.0/messages/send.json', {
             'key': 'UpdCbT8qNO_KP67EXAZqPg',
             'message': {
@@ -47,7 +48,6 @@ class ContactForm extends React.Component {
     handleInvalidSubmit(event, errors, values) {
         // this.setState({ errors });
         this.setState({ error: 'Please fill out all the fields' });
-        console.log(this.state.error);
     }
 
     handleChange(e) {
@@ -90,7 +90,7 @@ class ContactForm extends React.Component {
                     </Row>
                     <Row>
                         <Col sm="12" md={{ size: 5, offset: 3 }}>
-                            {this.state.values &&
+                            {this.state.isSent &&
                                 <div>
                                     <Alert color="success">
                                         Your message has been sent. Thank you!
