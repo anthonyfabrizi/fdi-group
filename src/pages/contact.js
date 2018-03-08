@@ -24,7 +24,7 @@ class ContactForm extends React.Component {
         axios.post('https://mandrillapp.com/api/1.0/messages/send.json', {
             'key': 'UpdCbT8qNO_KP67EXAZqPg',
             'message': {
-                'from_email': this.state.email,
+                'from_email': "web@fdi-group.com",
                 'from_name': this.state.name,
                 'headers': {
                     'Reply-To': this.state.email
