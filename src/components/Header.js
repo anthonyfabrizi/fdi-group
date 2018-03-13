@@ -15,19 +15,19 @@ const Header = (props) => (
       </button>
       <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav ml-auto">
-          <li className='nav-item'>
+          <li className='nav-item text-center text-sm-left'>
           <NavLink to="/about" activeClassName="active" className='nav-link'>Who We Are</NavLink>
           </li>
-          <li className='nav-item'>
+          <li className='nav-item text-center text-sm-left'>
             <NavLink to="/capabilities" activeClassName="active" className='nav-link'>Capabilities</NavLink>
           </li>
-          <li className={"nav-item"}>
+          <li className="nav-item text-center text-sm-left">
             <NavLink to="/work" activeClassName="active" className='nav-link'>Our Work</NavLink>
           </li>
-          <li className='nav-item'>
+          <li className='nav-item text-center text-sm-left'>
             <NavLink to="/blog" activeClassName="active" className='nav-link'>Blog</NavLink>
           </li>
-          <li className='nav-item'>
+          <li className='nav-item text-center text-sm-left'>
             <NavLink to="/contact" activeClassName="active" className='nav-link'>Contact Us</NavLink>
           </li>
         </ul>

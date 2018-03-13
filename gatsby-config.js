@@ -45,6 +45,7 @@ module.exports = {
             title
             description
             image {
+              handle
               url
             }
             imageAlignment

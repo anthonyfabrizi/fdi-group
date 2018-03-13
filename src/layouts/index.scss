@@ -97,8 +97,17 @@ article {
   margin: 0 auto;
   max-width: 650px;
 }
-.navbar-nav .nav-link.active {
-  border-bottom: solid 5px $black;
+@include media-breakpoint-up(lg) {
+  .navbar-nav .nav-link.active {
+    border-bottom: solid 5px $black;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .navbar-brand {
+    img {
+      max-width: 230px;
+    }
+  }
 }
 .pageContent {
   padding-top: 125px;

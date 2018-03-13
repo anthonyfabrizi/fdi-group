@@ -9,9 +9,9 @@ export default function Capabilities({ data }) {
                 {data.allCapabilities.edges.map(item => (
                     <Row key={item.node.id}>
                         <hr />
-                        <div className={"d-flex align-items-center " + (item.node.imageAlignment == "Left" ? "flex-row" : "flex-row-reverse")}>
+                        <div className={"d-sm-flex align-items-center " + (item.node.imageAlignment == "Left" ? "flex-row" : "flex-row-reverse")}>
                             <Col xs="12" sm="4">
-                                <img src={item.node.image.url} className="img-fluid" alt={item.node.image.url} />
+                                <img src={"https://media.graphcms.com/resize=w:400/" + item.node.image.handle} className="img-fluid" alt={item.node.image.url} />
                             </Col>
                             <Col className="p-4" xs="12" sm="8">
                                 <h3><strong>{item.node.title}</strong></h3>
@@ -34,6 +34,7 @@ query allCapabilities {
             title
             description
             image {
+                handle
                 url
             }
             imageAlignment
