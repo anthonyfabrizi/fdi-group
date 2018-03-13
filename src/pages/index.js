@@ -55,7 +55,7 @@ class IndexPage extends React.Component {
     });
 
     return (
-      <div className="pageContent">
+      <div className="homeContent">
         <Helmet>
             <title>Farmington Displays - Trade Show Displays, Exhibits, Retail</title>
         </Helmet>

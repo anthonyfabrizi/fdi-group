@@ -109,6 +109,12 @@ article {
     }
   }
 }
+.homeContent {
+  padding-top: 105px;
+  @include media-breakpoint-up(md) {
+    padding-top: 124px;
+  }
+}
 .pageContent {
   padding-top: 105px;
   @include media-breakpoint-up(md) {
