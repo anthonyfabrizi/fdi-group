@@ -88,7 +88,7 @@ class IndexPage extends React.Component {
 
         <section className="py-5">
           <div className="container text-center">
-            <h1><strong>a brand-building environment</strong></h1>
+            <h1><strong>brand-building environments</strong></h1>
           </div>
         </section>
       </div>
