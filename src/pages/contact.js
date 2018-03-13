@@ -1,6 +1,7 @@
 import React from 'react'
 import { AvForm, AvField, AvGroup, AvInput, AvFeedback } from 'availity-reactstrap-validation'
 import { Container, Row, Col, Button, Label, FormGroup, Alert } from 'reactstrap'
+import Helmet from 'react-helmet'
 import axios from 'axios'
 
 class ContactForm extends React.Component {
@@ -20,7 +21,7 @@ class ContactForm extends React.Component {
         event.persist();
         // get our form data out of state
         const { name, email, message } = this.state;
-        
+
         axios.post('https://mandrillapp.com/api/1.0/messages/send.json', {
             'key': 'UpdCbT8qNO_KP67EXAZqPg',
             'message': {
@@ -63,13 +64,16 @@ class ContactForm extends React.Component {
         const { name, email, message } = this.state;
         return (
             <div>
+                <Helmet>
+                    <title>Contact Us | Farmington Displays - Trade Show Displays, Exhibits, Retail</title>
+                </Helmet>
                 <Container className="pageContent">
                     <Row className="pt-5">
                         <Col sm="12" md={{ size: 8, offset: 2 }}>
                             <h2>How can we help?</h2>
                             <p>We'd love to hear from you. You can either reach out to us as a whole and one of our team members will get back to you, or if you have a specific question reach out to one of our staff.</p>
                         </Col>
-                        <Col sm="12" md={{ size: 6, offset: 3 }}>
+                        <Col sm="12" lg={{ size: 6, offset: 3 }}>
                             <AvForm onValidSubmit={this.handleValidSubmit} onInvalidSubmit={this.handleInvalidSubmit}>
                                 <AvGroup>
                                     <AvField name="name" label="Your Name" value={name} type="text" required />

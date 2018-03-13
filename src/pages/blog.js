@@ -1,23 +1,29 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
+import Helmet from 'react-helmet'
 import Markdown from 'react-markdown'
 import Link from 'gatsby-link'
 
 import styles from '../styles/index.module.css'
 
 const IndexPage = ({ data }) => (
-  <Container className="pageContent">
-    {data.allPosts.edges.map(post => (
-      <Row className="pt-5" key={post.node.id}>
-        <Col sm="12" md={{ size: 8, offset: 2 }}>
-          <h3><strong>{post.node.title}</strong></h3>
-          <h5>{post.node.dateAndTime}</h5>
-          <Markdown source={post.node.content} escapeHtml={false} />
-          <Link to={`/blog/${post.node.slug}`}>Read more</Link>
-        </Col>
-      </Row>
-    ))}
-  </Container>
+  <div>
+    <Helmet>
+      <title>Blog | Farmington Displays - Trade Show Displays, Exhibits, Retail</title>
+    </Helmet>
+    <Container className="pageContent">
+      {data.allPosts.edges.map(post => (
+        <Row className="pt-5" key={post.node.id}>
+          <Col sm="12" md={{ size: 8, offset: 2 }}>
+            <h3><strong>{post.node.title}</strong></h3>
+            <h5>{post.node.dateAndTime}</h5>
+            <Markdown source={post.node.content} escapeHtml={false} />
+            <Link to={`/blog/${post.node.slug}`}>Read more</Link>
+          </Col>
+        </Row>
+      ))}
+    </Container>
+  </div>
 )
 
 export default IndexPage

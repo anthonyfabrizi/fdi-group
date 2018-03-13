@@ -1,9 +1,13 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
+import Helmet from 'react-helmet'
 
 export default function Work({ data }) {
   return (
     <div>
+      <Helmet>
+        <title>Our Work | Farmington Displays - Trade Show Displays, Exhibits, Retail</title>
+      </Helmet>
       <Container>
         <h1>Work</h1>
         <hr />

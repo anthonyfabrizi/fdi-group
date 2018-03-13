@@ -33,6 +33,8 @@ module.exports = class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
+          <meta name="keywords" content="trade show, tradeshow, trade show displays, trade show booth, trade show booths, trade show display, woodworking, exhibits, displays, fdi, fdi group, fdi-group, farmington displays, farmington displays inc, design, manufacture, custom, custom exhibits, portables, portable exhibits, mobile, mobile displays, capabilities, point of purchase, graphics, signage, retail, retail store fixtures, interiors, corporate, museum, architectural, brand-building environments, tabletops, inlines, banner stands, kisoks, rental" />
+	        <meta name="description" content="Farmington Displays, fdi, is a leader in the design and manufacturing of trade show displays, custom exhibits, museum, retail and corporate environments." />
           <meta name="format-detection" content="telephone=no" />
           {this.props.headComponents}
           {css}

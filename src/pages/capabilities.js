@@ -5,6 +5,9 @@ import Helmet from 'react-helmet'
 export default function Capabilities({ data }) {
     return (
         <div className="pageContent">
+            <Helmet>
+                <title>Capabilities | Farmington Displays - Trade Show Displays, Exhibits, Retail</title>
+            </Helmet>
             <Container>
                 {data.allCapabilities.edges.map(item => (
                     <Row key={item.node.id}>

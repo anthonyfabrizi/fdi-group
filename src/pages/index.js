@@ -17,6 +17,7 @@ import {
   CarouselIndicators,
   CarouselControl
 } from 'reactstrap'
+import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 
 import styles from '../styles/index.module.css'
@@ -54,7 +55,10 @@ class IndexPage extends React.Component {
     });
 
     return (
-      <div>
+      <div className="pageContent">
+        <Helmet>
+            <title>Farmington Displays - Trade Show Displays, Exhibits, Retail</title>
+        </Helmet>
         <header>
           <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">

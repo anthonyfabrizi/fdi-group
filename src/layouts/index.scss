@@ -110,15 +110,24 @@ article {
   }
 }
 .pageContent {
-  padding-top: 125px;
+  padding-top: 105px;
+  @include media-breakpoint-up(md) {
+    padding-top: 124px;
+  }
   margin-bottom: $spacing-xxxl;
 }
 .carousel-item {
-  height: 100vh;
+  height: calc(100vh - 105px);
+  @include media-breakpoint-up(md) {
+    height: calc(100vh - 124px);
+  }
   min-height: 300px;
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+.collapsing {
+  transition: none !important;
 }
