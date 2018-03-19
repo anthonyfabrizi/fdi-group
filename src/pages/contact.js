@@ -22,28 +22,43 @@ class ContactForm extends React.Component {
         // get our form data out of state
         const { name, email, message } = this.state;
 
-        axios.post('https://mandrillapp.com/api/1.0/messages/send.json', {
-            'key': 'UpdCbT8qNO_KP67EXAZqPg',
-            'message': {
-                'from_email': "sales@fdi-group.com",
-                'from_name': this.state.name,
-                'headers': {
-                    'Reply-To': this.state.email
-                },
-                'subject': 'Question Submission',
-                'text': this.state.message,
-                'to': [
-                    {
-                        'email': 'info@fdi-group.com',
-                        'name': 'Sales',
-                        'type': 'to'
-                    }]
-            }
+        let postData = {
+            "personalizations": [
+              {
+                "to": [
+                  {
+                    "email": "info@fdi-group.com",
+                    "name": "Sales"
+                  }
+                ],
+                "subject": "Website Contact Form Submission"
+              }
+            ],
+            "from": {
+              "email": this.state.email,
+              "name": this.state.name
+            },
+            "reply_to": {
+              "email": this.state.email,
+              "name": this.state.name
+            },
+            "subject": "Website Contact Form Submission",
+            "content": [
+              {
+                "type": "text/plain",
+                "value": this.state.message
+              }
+            ]
+          };
+
+        axios.post('https://wt-381b15290b507e44262c99ac7a1586ba-0.run.webtask.io/sendgrid', postData)
+        .then((result) => {
+            //access the results here....
+            this.setState({ name: "", email: "", message: "", error: null });
         })
-            .then((result) => {
-                //access the results here....
-                this.setState({ name: "", email: "", message: "", error: null });
-            });
+        .catch((err) => {
+            console.log("AXIOS ERROR: ", err);
+          });
     };
 
     handleInvalidSubmit(event, errors, values) {
