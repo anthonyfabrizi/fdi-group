@@ -60,7 +60,7 @@ class IndexPage extends React.Component {
             <title>Farmington Displays - Trade Show Displays, Exhibits, Retail</title>
         </Helmet>
         <header>
-          <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel" data-interval="2000">
+          <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel" data-interval="3500">
             <ol className="carousel-indicators">
               {home.images.map((item, index) => (
                 (index === 0) ? (
