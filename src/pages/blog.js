@@ -2,45 +2,46 @@ import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import Helmet from 'react-helmet'
 import Markdown from 'react-markdown'
+import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
-
-import styles from '../styles/index.module.css'
+import Layout from '../layouts'
+import moment from 'moment'
 
 const IndexPage = ({ data }) => (
-  <div>
-    <Helmet>
-      <title>Blog | Farmington Displays - Trade Show Displays, Exhibits, Retail</title>
-    </Helmet>
-    <Container className="pageContent">
-      {data.allPosts.edges.map(post => (
-        <Row className="pt-5" key={post.node.id}>
-          <Col sm="12" md={{ size: 8, offset: 2 }}>
-            <h3><strong>{post.node.title}</strong></h3>
-            <h5>{post.node.dateAndTime}</h5>
-            <Markdown source={post.node.content} escapeHtml={false} />
-            <Link to={`/blog/${post.node.slug}`}>Read more</Link>
-          </Col>
-        </Row>
-      ))}
-    </Container>
-  </div>
+  <Layout>
+    <div>
+      <Helmet>
+        <title>Blog | Farmington Displays - Trade Show Displays, Exhibits, Retail</title>
+      </Helmet>
+      <Container className='pageContent'>
+        {data.gcms.posts.map(post => (
+          <Row className='pt-5' key={post.id}>
+            <Col sm='12' md={{ size: 8, offset: 2 }}>
+              <h3><strong>{post.title}</strong></h3>
+              <h5>{moment(post.dateAndTime).format('MMMM DD, YYYY')}</h5>
+              <Markdown source={post.content} escapeHtml={false} />
+              <Link to={`/blog/${post.slug}`}>Read more</Link>
+            </Col>
+          </Row>
+        ))}
+      </Container>
+    </div>
+  </Layout>
 )
 
 export default IndexPage
 
-export const allPostsQuery = graphql`
-  query allPosts {
-    allPosts(sort: { fields: [dateAndTime], order: DESC }) {
-      edges {
-        node {
-          id
-          title
-          slug
-          content
-          dateAndTime(formatString: "MMMM DD, YYYY")
-          coverImage {
-            handle
-          }
+export const query = graphql`
+  query {
+    gcms {
+      posts(orderBy: dateAndTime_DESC) {
+        id
+        title
+        slug
+        content
+        dateAndTime
+        coverImage {
+          handle
         }
       }
     }

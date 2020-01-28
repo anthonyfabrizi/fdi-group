@@ -4,61 +4,14 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-source-graphcms`,
+      resolve: `gatsby-source-graphql`,
       options: {
-        endpoint: `https://api.graphcms.com/simple/v1/cje988dkv0hig0121i4w2db6z`,
-        query: `{
-          allHomes {
-            id
-            title
-            images {
-              handle
-              url
-            }
-            logoImage {
-              url
-            }
-          },
-          allPosts {
-            id
-            slug
-            title
-            content
-            dateAndTime
-            coverImage {
-              handle
-            }
-          },
-          allGalleries {
-            id
-            title
-            slug
-            images {
-              handle
-              height
-              url
-              width
-            }
-          },
-          allCapabilities {
-            id
-            title
-            description
-            image {
-              handle
-              url
-            }
-            imageAlignment
-          },
-          allAbouts {
-            id
-            slug
-            headerImage {
-              url
-            }
-            content
-          }
-        }`
+        // Arbitrary name for the remote schema Query type
+        typeName: 'GCMS',
+        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+        fieldName: 'gcms',
+        // Url to query from
+        url: 'https://api-uswest.graphcms.com/v1/ck5qsfwx7083101939q6igzjd/master'
       }
     },
     {
@@ -87,7 +40,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
-        logo: "./src/favicon.png",
+        logo: './src/favicon.png',
         injectHTML: true,
         icons: {
           android: true,
@@ -105,11 +58,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-44870897-1",
+        trackingId: 'UA-44870897-1',
         head: false,
         anonymize: true,
-        respectDNT: true,
-      },
+        respectDNT: true
+      }
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-sass`

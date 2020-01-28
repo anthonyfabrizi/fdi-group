@@ -9,31 +9,25 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
     graphql(`
       {
-        allPosts {
-          edges {
-            node {
-              id
-              title
-              slug
-              coverImage {
-                handle
-              }
-              content
+        gcms {
+          posts {
+            id
+            title
+            slug
+            coverImage {
+              handle
             }
-          }
-        },
-        allGalleries {
-          edges {
-            node {
-              id
-              title
-              slug
-              images {
-                handle
-                height
-                url
-                width
-              }
+            content
+          },
+          galleries {
+            id
+            title
+            slug
+            images {
+              handle
+              height
+              url
+              width
             }
           }
         }
@@ -43,22 +37,22 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       if (result.errors) {
         console.log(result.errors)
       }
-      result.data.allPosts.edges.map(({ node }) => {
+      result.data.gcms.posts.map(({ slug }) => {
         createPage({
-          path: `/blog/${node.slug}`,
+          path: `/blog/${slug}`,
           component: slash(postTemplate),
           context: {
-            slug: node.slug
+            slug: slug
           }
         })
       })
 
-      result.data.allGalleries.edges.map(({ node }) => {
+      result.data.gcms.galleries.map(({ slug }) => {
         createPage({
-          path: `/work/${node.slug}`,
+          path: `/work/${slug}`,
           component: slash(galleryTemplate),
           context: {
-            slug: node.slug
+            slug: slug
           }
         })
       })

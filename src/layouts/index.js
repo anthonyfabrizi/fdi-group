@@ -1,10 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from 'gatsby'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 import fontawesome from '@fortawesome/fontawesome'
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faUpload from '@fortawesome/fontawesome-free-solid/faUpload'
 import faFacebookF from '@fortawesome/fontawesome-free-brands/faFacebookF'
 import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter'
@@ -14,30 +13,27 @@ import faInstagram from '@fortawesome/fontawesome-free-brands/faInstagram'
 
 fontawesome.library.add(faUpload, faFacebookF, faTwitter, faLinkedinIn, faYoutube, faInstagram)
 
-import './index.scss'
-
-const TemplateWrapper = ({ data, children }) => (
-  <div>
-    <Header logo={data.homes.logoImage.url} />
-    <main>
-      {children()}
-    </main>
-    <Footer />
-  </div>
-)
-
-TemplateWrapper.propTypes = {
-  children: PropTypes.func
-}
-
-export default TemplateWrapper
-
-export const IndexQuery = graphql`
-  query IndexQuery {
-    homes {
-      logoImage {
-        url
+export default ({ children }) => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        gcms {
+          homes {
+            logoImage {
+              url
+            }
+          }
+        }
       }
-    }
-  }
-`
+    `
+  )
+  return (
+    <div className='app-wrapper'>
+      <Header logo={data.gcms.homes[0].logoImage.url} />
+      <main>
+        {children}
+      </main>
+      <Footer />
+    </div>
+  )
+}
