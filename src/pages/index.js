@@ -1,53 +1,76 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Layout from '../layouts'
-import { graphql } from 'gatsby'
+import React from "react";
+import Helmet from "react-helmet";
+import Layout from "../layouts";
+import { graphql } from "gatsby";
 
 export default ({ data }) => {
-  const home = data.gcms.homes[0]
+  const home = data.gcms.homes[0];
+  console.log(data);
 
   const slides = home.images.map((item, index) => {
-    return (
-      (index === 0) ? (
-        <div key={item.url} className='carousel-item active' style={{ backgroundImage: 'url(' + item.url + ')' }}>
-          {/*
+    return index === 0 ? (
+      <div
+        key={item.url}
+        className="carousel-item active"
+        style={{ backgroundImage: "url(" + item.url + ")" }}
+      >
+        {/*
           <div className="carousel-caption d-none d-md-block">
             <h3>{item.caption}</h3>
             <p>This is a description for the slide {index + 1}.</p>
           </div>
         */}
-        </div>
-      ) : (
-        <div key={item.url} className='carousel-item' style={{ backgroundImage: 'url(' + item.url + ')' }}>
-          {/*
+      </div>
+    ) : (
+      <div
+        key={item.url}
+        className="carousel-item"
+        style={{ backgroundImage: "url(" + item.url + ")" }}
+      >
+        {/*
             <div className="carousel-caption d-none d-md-block">
               <h3>{item.caption}</h3>
               <p>This is a description for the slide {index + 1}.</p>
             </div>
           */}
-        </div>
-        )
-    )
-  })
+      </div>
+    );
+  });
 
   return (
     <Layout>
-      <div className='homeContent'>
+      <div className="homeContent">
         <Helmet>
-          <title>Farmington Displays - Trade Show Displays, Exhibits, Retail</title>
+          <title>
+            Farmington Displays - Trade Show Displays, Exhibits, Retail
+          </title>
         </Helmet>
         <header>
-          <div id='carouselExampleIndicators' className='carousel slide' data-ride='carousel' data-interval='3500'>
-            <ol className='carousel-indicators'>
-              {home.images.map((item, index) => (
-                (index === 0) ? (
-                  <li key={item.url} data-target='#carouselExampleIndicators' data-slide-to={index} className='active' />
+          <div
+            id="carouselExampleIndicators"
+            className="carousel slide"
+            data-ride="carousel"
+            data-interval="3500"
+          >
+            <ol className="carousel-indicators">
+              {home.images.map((item, index) =>
+                index === 0 ? (
+                  <li
+                    key={item.url}
+                    data-target="#carouselExampleIndicators"
+                    data-slide-to={index}
+                    className="active"
+                  />
                 ) : (
-                  <li key={item.url} data-target='#carouselExampleIndicators' data-slide-to={index} />
+                  <li
+                    key={item.url}
+                    data-target="#carouselExampleIndicators"
+                    data-slide-to={index}
+                  />
                 )
-              ))}
+              )}
             </ol>
-            <div className='carousel-inner' role='listbox'>
+            <div className="carousel-inner" role="listbox">
               {slides}
             </div>
             {/*
@@ -63,15 +86,17 @@ export default ({ data }) => {
           </div>
         </header>
 
-        <section className='py-5'>
-          <div className='container text-center'>
-            <h1><strong>brand-building environments</strong></h1>
+        <section className="py-5">
+          <div className="container text-center">
+            <h1>
+              <strong>brand-building environments</strong>
+            </h1>
           </div>
         </section>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query {
@@ -85,4 +110,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
